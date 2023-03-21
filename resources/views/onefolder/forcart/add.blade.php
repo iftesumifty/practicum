@@ -24,6 +24,7 @@
    <summary>Product Features</summary>
       <ul>
         <li>writter name:{{$re->Writer_Name}}</li>
+        <li>writter name:{{$re->quantity}}</li>
         <li>publication:{{$re->publication}}</li>
         <li>book name:{{$re->book_name}}</li>
         <li>price{{$re->price}}</li>

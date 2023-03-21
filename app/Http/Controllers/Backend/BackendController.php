@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\category;
 use App\Models\choice;
 use App\Models\layout;
+use App\Models\message;
 use App\Models\order;
 use App\Models\product;
 use App\Models\product1;
@@ -54,6 +55,7 @@ public function pub_delete( $id)
 
             'Writer_Name' => $request->Writer_Name,
             'book_name' => $request->book_name,
+            'quantity' => $request->quantity,
             'publication' => $request->publication,
             'image'=>$filename,
             'price' => $request->price,
@@ -675,7 +677,28 @@ $layout=layout::find($id);
         $choice = choice::find($id)->delete();
         return redirect()->back();
     }
+    //for message
+    public function message( )
+    {
+       return view('two.layout.message.list');
+    }
     
+    public function messagepass(Request $request )
+    {
+
+        message::create([
+
+            'name' => $request->name,
+            'email' => $request->email,
+           
+            'subject' => $request->subject,
+            'message' => $request->message,
+        ]);
+        return back();
+      
+    }
+
+   
 
 
 

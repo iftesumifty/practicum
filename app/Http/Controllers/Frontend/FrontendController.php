@@ -13,6 +13,9 @@ use App\Models\re1;
 use App\Models\suborder;
 use App\Models\User;
 use Cart;
+// use Gloudemans\Shoppingcart\Cart as ShoppingcartCart;
+// use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
+// use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 //use App\Models\User as ModelsUser;
 //use Glou\Models\User;
 
@@ -159,6 +162,7 @@ class FrontendController extends Controller
              'quantity'=>$data->qty ,
              'subtotal'=>$data->qty*$data->price 
             ]);
+            
         }
         Cart::destroy();
         return redirect()->route('index');
@@ -175,6 +179,49 @@ class FrontendController extends Controller
          $choices=choice::all();
         return view('onefolder.userchoice.list',compact('choices'));
     }
+    //for choice details
+    public function details1($id)
 
+    { 
+        // $re = re::find($id);
+         $choices=choice::find($id);
+        
+        return view('onefolder.userchoice.detail',compact('choices'));
+    }
+
+ public function buy()
+
+    { $Carts = Cart::content();
+        // $re = re::find($id);
+        //  $choices=choice::all();
+        
+        return view('onefolder.userchoice.buy',compact('Carts'));
+    }
+    
+
+    public function cart_list1()
+
+    {
+        $Carts = Cart::content();
+        return view('onefolder.userchoice.buy',compact('Carts'));
+    }
+
+    public function cart_add1($id)
+
+    {
+        $choice=choice::find($id);
+       $cart_add1=Cart::add([
+
+        'id' => $choice ->id,
+        'name' => $choice ->name ,
+         'qty' => 1,
+          'price1' =>$choice-> price1, 
+         'weight' => 1, 
+         'options' => ['size' => 'large']]);
+
+         return redirect()->back();
+
+    }
+    
 
 }

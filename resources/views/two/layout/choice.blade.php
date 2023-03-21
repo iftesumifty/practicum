@@ -54,7 +54,8 @@
     <label for="exampleInputPublisher_Name" class="form-label">profile </label>
     <input type="file" class="form-control" name="image" id="exampleInputPublisher_Name">
   </div>
-  
+
+ 
   <div class="mb-3">
     <label for="exampleInputPublisher_Name" class="form-label">price </label>
     <input type="integer" class="form-control" name="price1" id="exampleInputPublisher_Name">
@@ -85,6 +86,7 @@
       <th scope="col">book_name</th>
       <th scope="col">Writer_Name</th>
       <th scope="col">image</th>
+     
       <th scope="col">price</th>
       
       <th scope="col">Action</th>
@@ -93,22 +95,23 @@
       
     </tr>
 <tbody>
-    @foreach($choice as $key=>$ch)
+    @foreach($choice as $key=>$choice)
     <tr>
       <th>{{$key+1}}</th>
-      <td>{{$ch->name}}</td>
-      <td>{{$ch->name1}}</td>
+      <td>{{$choice->name}}</td>
+      <td>{{$choice->name1}}</td>
       
       
       <td>
       
-      <img src="{{asset('/uploads/profile/'.$ch->image)}}"  height="50" weight="50" />
+      <img src="{{asset('/uploads/profile/'.$choice->image)}}"  height="50" weight="50" />
       
 
       </td>
-      <td>{{$ch->price1}}</td>
+      <td>{{$choice->price1}}</td>
+      
       <td>
- <a class="btn-btn-danger" href="{{route('choice1',$ch->id)}}" role="buttton">Delete</a> 
+ <a class="btn-btn-danger" href="{{route('choice1',$choice->id)}}" role="buttton">Delete</a> 
         
       </td>
      

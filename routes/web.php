@@ -33,7 +33,7 @@ Route::get('dashboard',[BackendController::class,'dashboard'])->name('dashboard'
  Route::get('choice',[BackendController::class,'ch'])->name('ch'); 
  Route::post('choicecat',[BackendController::class,'choicecat'])->name('choicecat'); 
  Route::get('choice_delete/{id}',[BackendController::class,'choice1'])->name('choice1');
-
+ 
 Route::get('backend',[BackendController::class,'backend'])->name('backend'); 
 Route::get('logout',[BackendController::class,'logout'])->name('logout');
 //add book like categories
@@ -75,6 +75,11 @@ Route::post('product1/add',[BackendController::class,'product1_add'])->name('pro
 //for return book
 Route::get('return',[BackendController::class,'return'])->name('return');
 Route::post('re1',[BackendController::class,'re1'])->name('re1');
+
+
+//for messagemessage1
+Route::get('message1',[BackendController::class,'message'])->name('message');
+ Route::post('mes1',[BackendController::class,'messagepass'])->name('messagepass');
 
 
 
@@ -151,5 +156,11 @@ Route::get('/order1/delete/{id}',[BackendController::class,'suborder_delete'])->
 Route::get('logout',[BackendController::class,'logout'])->name('logout');
 //user logout
 Route::get('logout1',[BackendController::class,'logout1'])->name('logout1');
+
+//for userchoiceview file
+Route::get('details/{id}',[FrontendController::class,'details1'])->name('details1'); 
+Route::get('buy',[FrontendController::class,'buy'])->name('buy'); 
+Route::get('/cart/add1/{id}',[FrontendController::class,'cart_add1'])->name('cart_add1'); 
+ Route::get('/cart/list1',[FrontendController::class,'cart_list1'])->name('cart_list1'); 
 
 

@@ -17,6 +17,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('book_name');
             $table->string('Writer_Name');
+            $table->string('quantity');
             $table->string('publication');
             $table->string('pdf');
             

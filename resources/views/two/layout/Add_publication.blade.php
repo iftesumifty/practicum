@@ -44,6 +44,13 @@
     <label for="exampleInputWriter_Name" class="form-label">book_name</label>
     <input type="text" class="form-control" name="book_name" id="exampleInputWriter_Name">
   </div>
+
+  <div class="mb-3">
+    <label for="exampleInputWriter_Name" class="form-label">quantity</label>
+    <input type="text" class="form-control" name="quantity" id="exampleInputWriter_Name">
+  </div>
+
+  
   
   <div class="mb-3">
     <label for="exampleInputPublisher_Name" class="form-label">publication </label>
@@ -86,6 +93,8 @@
     <th scope="col">#</th>
       <th scope="col">Writer_Name</th>
       <th scope="col">book_name</th>
+      <th scope="col">quantity</th>
+      
       <th scope="col">publication</th>
       <th scope="col">image</th>
       <th scope="col">price</th>
@@ -101,6 +110,8 @@
       <th>{{$key+1}}</th>
       <td>{{$re->Writer_Name}}</td>
       <td>{{$re->book_name}}</td>
+      <td>{{$re->quantity}}</td>
+      
       <td>{{$re->publication}}</td>
       <td>
       
